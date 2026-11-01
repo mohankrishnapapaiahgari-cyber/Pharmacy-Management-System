@@ -506,7 +506,7 @@
                     <label class="form-label fw-semibold" for="loginEmail">Email Address</label>
                     <div class="input-group">
                         <span class="input-group-text"><i class="bi bi-envelope"></i></span>
-                        <input type="email" class="form-control" id="loginEmail" placeholder="you@arunapharma.com" required>
+                        <input type="email" class="form-control" id="loginEmail" placeholder="you@arunapharmacy.com" required>
                     </div>
                 </div>
                 <div class="mb-4">
@@ -525,11 +525,11 @@
                 <p class="text-muted text-center mb-2" style="font-size:.82rem;">
                     <i class="bi bi-lightning-charge me-1"></i>Quick Demo Login</p>
                 <div class="d-flex gap-2 justify-content-center">
-                    <button class="btn btn-outline-primary" onclick="quickFill('owner@arunapharma.com','owner123')">
+                    <button class="btn btn-outline-primary" onclick="quickFill('owner@arunapharmacy.com','owner123')">
                         <i class="bi bi-graph-up me-1"></i>Owner</button>
-                    <button class="btn btn-outline-success" onclick="quickFill('pharmacist@arunapharma.com','pharma123')">
+                    <button class="btn btn-outline-success" onclick="quickFill('pharmacist@arunapharmacy.com','pharma123')">
                         <i class="bi bi-prescription2 me-1"></i>Pharmacist</button>
-                    <button class="btn btn-outline-warning" onclick="quickFill('cashier@arunapharma.com','cash123')">
+                    <button class="btn btn-outline-warning" onclick="quickFill('cashier@arunapharmacy.com','cash123')">
                         <i class="bi bi-cart3 me-1"></i>Cashier</button>
                 </div>
             </div>
@@ -2005,7 +2005,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label fw-semibold">Email Address <span class="text-danger">*</span></label>
-                                <input type="email" class="form-control" id="empEmail" placeholder="employee@arunapharma.com" required>
+                                <input type="email" class="form-control" id="empEmail" placeholder="employee@arunapharmacy.com" required>
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label fw-semibold">Phone Number</label>
@@ -2226,7 +2226,12 @@
     // =====================================================
     // LOGIN / LOGOUT
     // =====================================================
-    function quickFill(e,p){ document.getElementById('loginEmail').value=e; document.getElementById('loginPassword').value=p; }
+    function quickFill(e,p){
+        document.getElementById('loginEmail').value=e;
+        document.getElementById('loginPassword').value=p;
+        const err = document.getElementById('loginError');
+        if(err) err.classList.add('d-none');
+    }
 
     async function handleLogin(event){
         event.preventDefault();
